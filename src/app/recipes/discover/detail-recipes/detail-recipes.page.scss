@@ -1,0 +1,14 @@
+ion-content {
+  
+  .image-container {
+    padding: 0 !important;
+    img {
+      min-height: 50rem !important;
+    }
+  }
+}
+.score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

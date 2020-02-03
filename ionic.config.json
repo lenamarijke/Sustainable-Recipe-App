@@ -1,0 +1,8 @@
+{
+  "name": "Spice",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

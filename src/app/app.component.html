@@ -1,0 +1,42 @@
+<ion-app>
+    <ion-menu side="start">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Spice
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+  
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle>
+            <ion-item lines="none" href="https://eatforum.org/about/">
+              <ion-icon name="close" slot="start"></ion-icon>
+              <ion-label>About the EAT-Lancet Commission</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item lines="none" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)31788-4/fulltext">
+              <ion-icon name="close" slot="start"></ion-icon>
+              <ion-label>EAT-Lancet Report</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item lines="none" href="https://eaternity.org/foodprint/database">
+              <ion-icon name="close" slot="start"></ion-icon>
+              <ion-label>About the Eaternity Score</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item lines="none" (click)="onLogout()" button>
+              <ion-icon name="exit" slot="start"></ion-icon>
+              <ion-label>Logout</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-app>
+  

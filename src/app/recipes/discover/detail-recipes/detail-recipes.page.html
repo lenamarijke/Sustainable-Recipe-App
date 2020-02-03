@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button slot="icon-only" text="">
+      </ion-back-button>
+    </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <div text-center *ngIf="isLoading"> 
+          <ion-spinner color="primary"></ion-spinner>
+          </div>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3" class="image-container">  
+              <ion-img [src]="recipe.imageUrl"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size-sm="6" offset-sm="3" text-center padding>
+            <h1 text-center> {{ recipe.title }}</h1>
+            <ion-header text-center class="score-container"> {{ recipe.score }}
+              <ion-button size="small" color="primary" fill="clear" slot="icon-only" (click)="onScoreInfo()">
+                <ion-icon name="information-circle-outline"></ion-icon>
+              </ion-button>
+            </ion-header>
+            <ion-button fill="outline" (click)="onOrderRecipe()" expand="full" size="large"> Order now </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-header text-center padding> <b> {{ recipe.description }} </b> </ion-header>
+        <h2 padding>Ingredients:</h2>
+            <ion-virtual-scroll [items]="recipe.ingredients" approxItemHeight="10px">
+              <ion-item *virtualItem="let ingredient"> 
+                {{ ingredient }}
+              </ion-item>
+            </ion-virtual-scroll>
+                <h2 padding class="badge">Instructions:</h2>
+              <ion-virtual-scroll [items]="recipe.instructions" approxItemHeight="100px">
+                <ion-item *virtualItem="let instruction" lines="none"> 
+                  {{ instruction }}
+                </ion-item>
+        </ion-virtual-scroll>
+      </ion-grid>
+    </ion-content>
+
+      
+  
+  
+  

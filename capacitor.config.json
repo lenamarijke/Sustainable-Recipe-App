@@ -1,0 +1,7 @@
+{
+  "appId": "com.lmw.spice",
+  "appName": "Spice",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

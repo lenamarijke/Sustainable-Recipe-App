@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar lines="none">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/recipes/tabs/discover" text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar> 
+  </ion-header>
+  
+  <ion-content>
+    <h2 text-center>Previously ordered dinners</h2>
+    <ion-grid
+    *ngIf="!isLoading && (!recipes)"
+  >
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <p>You have not ordered any dinners so far, please order your dinner and come back!</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+      <ion-grid *ngIf="!isLoading && (recipes)">
+          <ion-row>
+              <ion-col size-md="6" offset-md="3" text-center *ngIf="isLoading">
+                  <ion-spinner color="primary"></ion-spinner>
+                </ion-col>
+              <ion-col
+              size-md="6"
+              offset-md="3"
+              *ngIf="!isLoading && recipes"
+              >
+                <ion-list>
+                    <ion-item *ngFor="let recipe of (recipes | async)" [routerLink]="['/', 'recipes', 'tabs', 'discover', 'detail', recipe.id]"
+                    detail
+                    lines="none"
+                    >
+                      <ion-thumbnail slot="start">
+                      <ion-img [src]="recipe.imageUrl"></ion-img>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <h2>{{ recipe.title }}</h2>
+                      <p>{{ recipe.score }} </p>
+                    </ion-label> 
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+      </ion-content>
+  

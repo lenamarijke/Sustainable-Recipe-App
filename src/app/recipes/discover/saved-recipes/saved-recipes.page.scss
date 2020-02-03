@@ -1,0 +1,21 @@
+ion-content {
+  ion-thumbnail {
+
+    height: 7rem;
+    width: 7rem;
+    margin-bottom: 1rem;
+    
+    
+    ion-img {
+      border-radius: 1rem !important;
+    }
+  }
+  ion-item {
+    a {
+      padding-left: 0;
+      .item-inner {
+        border: 0 !important;
+      }
+    }
+  }
+}
